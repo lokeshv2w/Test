@@ -72,7 +72,7 @@ class AdminController extends Controller
         $validate['user_city']    = 'required';
         $validate['user_state']   = 'required';
         $validate['user_country'] = 'required';
-        $validate['user_photo'] = 'required|image';
+        // $validate['user_photo'] = 'required|image';
         $request->validate($validate);
 
         $userrecords = User::find(auth()->user()->id);
@@ -91,9 +91,19 @@ class AdminController extends Controller
         if(!empty($userrecords->userInfo->user_photo)){
             unlink($public_path);
         }
-        $adminProfile = time().'.'.$request->user_photo->getClientOriginalExtension();
-        $request->user_photo->move(public_path('backend/AdminProfile'),$adminProfile);
+        if(!empty($request->user_photo)){
+            $adminProfile = time().'.'.$request->user_photo->getClientOriginalExtension();
+            $request->user_photo->move(public_path('backend/AdminProfile'),$adminProfile);
+        }else{
+            $adminProfile = auth()->user()->userInfo->user_photo;
+            
+            // $adminProfile = time().'.'.$oldImagePath->getClientOriginalExtension();
+        }
+        
+        
+        
         $userrecords->userInfo->user_photo = $adminProfile;
+        
         $data = $userrecords->userInfo->save();
         
         // $userInfo = new UserInfo();
