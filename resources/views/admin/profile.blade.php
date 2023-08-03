@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img class="img-xs rounded-circle" src="/backend/AdminProfile/{{auth()->user()->userInfo->user_photo}}" alt="">
+                            <img class="img-xs rounded-circle" src="{{ auth()->user()->userInfo->user_photo ? '/backend/AdminProfile/'.auth()->user()->userInfo->user_photo :  asset('backend/assets/images/user.png') }}" alt="">
                             <div class="ms-2">
                                 <p>{{ auth()->user()->userInfo->username }}</p>
                                 <p class="tx-11 text-muted">{{ auth()->user()->name }} | {{ auth()->user()->status }}</p>
@@ -76,7 +76,7 @@
                 <div class="card-header">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img class="img-xs rounded-circle" src="/backend/AdminProfile/{{auth()->user()->userInfo->user_photo}}" alt="">
+                            <img class="img-xs rounded-circle" src="{{ auth()->user()->userInfo->user_photo ? '/backend/AdminProfile/'.auth()->user()->userInfo->user_photo :  asset('backend/assets/images/user.png') }}" alt="">
                             <div class="ms-2">
                                 <p>Update Password</p>
                                 <p class="tx-11 text-muted">{{ auth()->user()->name }} | {{ auth()->user()->status }}</p>
@@ -128,7 +128,7 @@
                 <div class="card-header">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img class="img-xs rounded-circle" src="/backend/AdminProfile/{{auth()->user()->userInfo->user_photo}}" alt="">
+                            <img class="img-xs rounded-circle" src="{{ auth()->user()->userInfo->user_photo ? '/backend/AdminProfile/'.auth()->user()->userInfo->user_photo :  asset('backend/assets/images/user.png') }}" alt="">
                             <div class="ms-2">
                                 <p>Update Profile</p>
                                 <p class="tx-11 text-muted">{{ auth()->user()->name }} | {{ auth()->user()->status }}</p>

@@ -325,7 +325,7 @@
                             <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
                                 <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                                     <div class="mb-3">
-                                        <img class="wd-80 ht-80 rounded-circle" src="/backend/AdminProfile/{{auth()->user()->userInfo->user_photo}}" alt="">
+                                        <img class="wd-80 ht-80 rounded-circle" src="{{ auth()->user()->userInfo->user_photo ? '/backend/AdminProfile/'.auth()->user()->userInfo->user_photo :  asset('backend/assets/images/user.png') }}" alt="">
                                     </div>
                                     <div class="text-center">
                                         <p class="tx-16 fw-bolder">{{ auth()->user()->userInfo->username }}</p>
