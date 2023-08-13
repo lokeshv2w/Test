@@ -420,3 +420,15 @@
 
     </div>
 @endsection
+@push("script")
+@if(Session::has('msg'))
+  <script>
+    toastr.options = {
+    "closeButton": true,
+    "progressBar": true,
+    "positionClass": "toast-top-center"
+  }
+    toastr.success("{{ Session::get('msg') }}");
+  </script>
+  @endif
+    @endpush

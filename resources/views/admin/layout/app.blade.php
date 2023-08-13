@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/file-upload/css/fileinput.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/file-upload/toaster/toastr.css') }}"> 
     
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
     @stack("style")
@@ -403,6 +404,7 @@
     <script src="{{ asset('backend/assets/file-upload/js/plugins/piexif.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backend/assets/file-upload/js/plugins/sortable.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backend/assets/file-upload/js/fileinput.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/file-upload/toaster/toastr.min.js') }}" type="text/javascript"></script>
     @stack("script")
 </body>
 

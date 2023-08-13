@@ -236,7 +236,37 @@
         </div>
      </div>
     @endsection
+
+    
+
     @push("script")
+    @if(Session::has('msg'))
+        @switch(Session::get('status'))
+        
+        @case('success')
+        <script>
+            toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-center"
+            }
+            toastr.success("{{ Session::get('msg') }}");
+        </script>
+        @break
+
+        @case('error')
+        <script>
+            toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-center"
+            }
+            toastr.error("{{ Session::get('msg') }}");
+        </script>
+        @break
+
+        @endswitch
+    @endif
     <script>
         $(document).ready(function () {
             $('#user_photo1').fileinput({

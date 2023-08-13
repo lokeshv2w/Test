@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
   <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+  <link rel="stylesheet" href="{{ asset('backend/assets/file-upload/toaster/toastr.css') }}">
 </head>
 
 <body>
@@ -46,9 +47,9 @@
                         <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
                         @error('email')
                         <p style="color:red">{{ $message }}</p>
-                        @enderror  
+                        @enderror
                       </div>
-                      
+
                       <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" name="password" id="password" value="{{ old('password') }}" autocomplete="current-password" placeholder="Password">
@@ -56,13 +57,13 @@
                         <p style="color:red">{{ $message }}</p>
                         @enderror
                       </div>
-                      
+
                       <div>
                         <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white">Login</button>
                       </div>
-                      @if(Session::has('msg'))
+                      <!-- @if(Session::has('msg'))
                         <p style="color:red">{{ Session::get('msg') }}</p>
-                        @endif
+                        @endif -->
                       <!-- <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a> -->
                     </form>
                   </div>
@@ -79,6 +80,34 @@
   <script src="{{ asset('backend/assets/vendors/core/core.js') }}"></script>
   <script src="{{ asset('backend/assets/vendors/feather-icons/feather.min.js') }}"></script>
   <script src="{{ asset('backend/assets/js/template.js') }}"></script>
+  <script src="{{ asset('backend/assets/file-upload/toaster/toastr.min.js') }}" type="text/javascript"></script>
+  @if(Session::has('msg'))
+    @switch(Session::get('status'))
+    
+      @case('success')
+      <script>
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true,
+          "positionClass": "toast-top-right"
+        }
+        toastr.success("{{ Session::get('msg') }}");
+      </script>
+      @break
+
+      @case('error')
+      <script>
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true,
+          "positionClass": "toast-top-right"
+        }
+        toastr.error("{{ Session::get('msg') }}");
+      </script>
+      @break
+
+    @endswitch
+  @endif
 </body>
 
 </html>
