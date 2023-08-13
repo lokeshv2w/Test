@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/fonts/feather-font/css/iconfont.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/file-upload/css/fileinput.css') }}">
+    
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+    @stack("style")
+    
 </head>
 
 <body>
@@ -394,7 +398,12 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('backend/assets/js/dashboard-dark.js') }}"></script>
     <!-- End custom js for this page -->
-
+    <script src="{{ asset('backend/assets/file-upload/js/plugins/buffer.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/file-upload/js/plugins/filetype.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/file-upload/js/plugins/piexif.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/file-upload/js/plugins/sortable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/file-upload/js/fileinput.js') }}" type="text/javascript"></script>
+    @stack("script")
 </body>
 
 </html>
