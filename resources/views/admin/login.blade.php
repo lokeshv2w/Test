@@ -30,13 +30,13 @@
           <div class="col-md-8 col-xl-6 mx-auto">
             <div class="card">
               <div class="row">
-                <div class="col-md-4 pe-md-0">
+                <div class="col-md-3 pe-md-0">
 
                   <div class="auth-side-wrapper">
                     <img src="{{ asset('backend/assets/images/login.png') }}" alt="">
                   </div>
                 </div>
-                <div class="col-md-8 ps-md-0">
+                <div class="col-md-9 ps-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
                     <a href="#" class="noble-ui-logo logo-light d-block mb-2">{{ config('global.role.admin.adminLogTitle.f')}}<span> {{ config('global.role.admin.adminLogTitle.s')}}</span></a>
                     <h5 class="text-muted fw-normal mb-4">{{ config('global.role.admin.adminLogContent')}}</h5>
